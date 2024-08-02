@@ -72,7 +72,7 @@ const repositories = [
 ];
 
 export const Repositories: FC<IRepositoriesProps> = () => {
-  if (repositories.length) {
+  if (!repositories.length) {
     return (
       <OutputError icon={<Repository />} text="Repository list is empty" />
     );
