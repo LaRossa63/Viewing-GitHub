@@ -37,10 +37,7 @@ export const Pagination: FC<IPaginationProps> = ({
     return [behindItem, end];
   }, [count, countItemPage, currentPage]);
 
-  const handleChangePagination = (
-    event: ChangeEvent<unknown>,
-    value: number,
-  ) => {
+  const handleChangePagination = (_: ChangeEvent<unknown>, value: number) => {
     setCurrentPage(value);
     onChange(value);
   };

@@ -1,6 +1,6 @@
 import css from './Header.module.scss';
 import { Logo, Search } from '@/assets';
-import { Input } from '@components/';
+import { Input } from '@/components';
 
 export const Header = () => {
   return (

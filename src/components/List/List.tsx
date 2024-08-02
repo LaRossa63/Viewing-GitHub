@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import css from './List.module.scss';
 import { ListItem, Pagination } from '@/components';
-import { MAX_COUNT_ITEM_PAGE } from '@components/List/constants.ts';
+import { MAX_COUNT_ITEM_PAGE } from './constants.ts';
 import { Box } from '@mui/material';
 
 interface IListProps {
