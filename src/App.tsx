@@ -1,5 +1,6 @@
-import { AppProvider } from './providers';
-import { Main } from './pages';
+import './App.scss';
+import { AppProvider } from '@/providers';
+import { Main } from '@/pages';
 
 export const App = () => {
   return (

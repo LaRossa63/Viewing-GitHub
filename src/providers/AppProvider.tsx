@@ -1,13 +1,17 @@
 import { QueryClientProvider } from 'react-query';
-import { FC, ReactNode } from 'react';
-import { queryClient } from '../api';
+import { FC, ReactNode, StrictMode } from 'react';
+import { queryClient } from '@/api';
+import { theme } from '@/theme';
+import { ThemeProvider } from '@mui/material';
 
 interface IAppProviderProps {
   children: ReactNode;
 }
 
 export const AppProvider: FC<IAppProviderProps> = ({ children }) => (
-  <React.StrictMode>
-    <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
-  </React.StrictMode>
+  <StrictMode>
+    <ThemeProvider theme={theme}>
+      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    </ThemeProvider>
+  </StrictMode>
 );

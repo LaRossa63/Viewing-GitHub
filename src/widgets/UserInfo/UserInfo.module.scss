@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.subscriptions {
+  display: flex;
+  align-items: center;
+
+  margin-top: 25px;
+  gap: 16px;
+
+  & > div {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+}
