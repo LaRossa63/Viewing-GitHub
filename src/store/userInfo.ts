@@ -17,9 +17,9 @@ const initialState: IInitialState = {
   page: 1,
 };
 
-export const userInfoStore = createStore('user_info_store')(initialState, {
-  devtools: { enabled: true },
-}).extendActions(set => ({
+export const userInfoStore = createStore('user_info_store')(
+  initialState,
+).extendActions(set => ({
   setUser: (user: IInitialState['user']) => {
     set.user(user);
   },

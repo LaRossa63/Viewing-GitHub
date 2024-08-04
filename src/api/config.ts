@@ -9,4 +9,14 @@ Axios.interceptors.response.use(response => {
   return response.data;
 });
 
-export const queryClient = new QueryClient();
+export const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      refetchOnReconnect: false,
+      refetchOnMount: false,
+      retryOnMount: false,
+      retry: false,
+    },
+  },
+});
