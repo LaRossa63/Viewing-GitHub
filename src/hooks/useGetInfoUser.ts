@@ -3,7 +3,7 @@ import { IUser } from '@/types';
 import { userInfoStore } from '@/store';
 import { githubApi } from '@/api';
 import { useEffect } from 'react';
-import { useGetRepositoryUser } from '@hooks/useGetRepositoryUser.ts';
+import { useGetRepositoryUser } from '@/hooks';
 
 export const useGetInfoUser = () => {
   const { mutate: getUserInfoByName, status: statusUserInfoByName } =
