@@ -1,30 +1,31 @@
 import { FC } from 'react';
 import css from './List.module.scss';
 import { ListItem, Pagination } from '@/components';
-import { MAX_COUNT_ITEM_PAGE } from './constants.ts';
 import { Box } from '@mui/material';
+import { MAX_PEAR_PAGE } from '@/constants';
+import { IUserRepository } from '@/types';
+import { userInfoStore } from '@/store';
 
 interface IListProps {
-  list: {
-    title: string;
-    titleLink: string;
-    description: string;
-  }[];
+  list: IUserRepository[];
+  countItem: number;
 }
 
-export const List: FC<IListProps> = ({ list }) => {
+export const List: FC<IListProps> = ({ list, countItem }) => {
+  const statusUserRepository = userInfoStore.use.statusUserRepository();
+
   const handleChangePagination = (page: number) => {
-    console.log('current page', page);
+    userInfoStore.set.page(page);
   };
 
   return (
     <Box display="flex" flexDirection="column" gap="24px">
       <ul className={css.list}>
-        {list.slice(0, 4).map(repository => (
+        {list.map(repository => (
           <ListItem
-            key={repository.title}
-            title={repository.title}
-            titleLink={repository.titleLink}
+            key={repository.name}
+            title={repository.name}
+            titleLink={repository.html_url}
             description={repository.description}
           />
         ))}
@@ -32,9 +33,10 @@ export const List: FC<IListProps> = ({ list }) => {
 
       {list.length !== 0 && (
         <Pagination
-          countItemPage={MAX_COUNT_ITEM_PAGE}
-          count={list.length}
+          countItemPage={MAX_PEAR_PAGE}
+          count={countItem}
           onChange={handleChangePagination}
+          disabled={statusUserRepository === 'loading'}
         />
       )}
     </Box>

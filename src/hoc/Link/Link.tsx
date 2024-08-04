@@ -8,7 +8,11 @@ interface ILinkProps extends LinkProps {
 
 export const Link: FC<ILinkProps> = ({ href, children }) => {
   return (
-    <MuiLink href={href} sx={{ color: '#0064EB', textDecoration: 'none' }}>
+    <MuiLink
+      href={href}
+      target="_blank"
+      sx={{ color: '#0064EB !important', textDecoration: 'none' }}
+    >
       {children}
     </MuiLink>
   );

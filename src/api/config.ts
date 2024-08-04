@@ -5,4 +5,18 @@ export const Axios = axios.create({
   baseURL: 'https://api.github.com',
 });
 
-export const queryClient = new QueryClient();
+Axios.interceptors.response.use(response => {
+  return response.data;
+});
+
+export const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      refetchOnReconnect: false,
+      refetchOnMount: false,
+      retryOnMount: false,
+      retry: false,
+    },
+  },
+});

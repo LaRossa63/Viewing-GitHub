@@ -16,7 +16,7 @@ export const ListItem: FC<IListItem> = ({ title, titleLink, description }) => {
         <Typography variant="h3">{title}</Typography>
       </Link>
 
-      <Typography variant="body1">{description}</Typography>
+      <Typography variant="body1">{description || '-'}</Typography>
     </li>
   );
 };

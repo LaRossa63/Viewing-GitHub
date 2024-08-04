@@ -5,12 +5,14 @@ interface IPaginationProps {
   countItemPage: number;
   count: number;
   onChange: (page: number) => void;
+  disabled?: boolean;
 }
 
 export const Pagination: FC<IPaginationProps> = ({
   countItemPage,
   count,
   onChange,
+  disabled = false,
 }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -53,7 +55,11 @@ export const Pagination: FC<IPaginationProps> = ({
         {startCount}-{endCount} of {count} items
       </Typography>
 
-      <MuiPagination count={countPage} onChange={handleChangePagination} />
+      <MuiPagination
+        disabled={disabled}
+        count={countPage}
+        onChange={handleChangePagination}
+      />
     </Box>
   );
 };
