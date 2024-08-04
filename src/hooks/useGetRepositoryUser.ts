@@ -37,7 +37,7 @@ export const useGetRepositoryUser = () => {
       repository => ({
         name: repository.name,
         description: repository.description,
-        html_url: repository.description,
+        clone_url: repository.clone_url,
       }),
     );
 

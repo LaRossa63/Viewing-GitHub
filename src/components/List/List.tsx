@@ -25,7 +25,7 @@ export const List: FC<IListProps> = ({ list, countItem }) => {
           <ListItem
             key={repository.name}
             title={repository.name}
-            titleLink={repository.html_url}
+            titleLink={repository.clone_url}
             description={repository.description}
           />
         ))}

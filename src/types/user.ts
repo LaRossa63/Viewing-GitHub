@@ -17,5 +17,5 @@ export interface IUserRepositoryParams {
 export interface IUserRepository {
   name: string;
   description: string;
-  html_url: string;
+  clone_url: string;
 }
