@@ -23,6 +23,10 @@ export default defineConfig({
       '@widgets': path.resolve(__dirname, './src/widgets'),
       '@theme': path.resolve(__dirname, './src/theme'),
       '@hoc': path.resolve(__dirname, './src/hoc'),
+      '@types': path.resolve(__dirname, './src/types'),
+      '@hooks': path.resolve(__dirname, './src/hooks'),
+      '@store': path.resolve(__dirname, './src/store'),
+      '@constants': path.resolve(__dirname, './src/constants'),
     },
   },
 

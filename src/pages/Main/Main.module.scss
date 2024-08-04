@@ -1,5 +1,4 @@
 .container {
-  display: flex;
-  padding: 28px 56px;
-  gap: 85px;
+  width: 100%;
+  height: calc(100vh - 75px);
 }
