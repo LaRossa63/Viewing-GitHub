@@ -1,12 +1,9 @@
-import { FC } from 'react';
 import { Box, Typography } from '@mui/material';
 import { List, OutputError } from '@/components';
 import { Repository } from '@/assets';
 import { userInfoStore } from '@/store';
 
-interface IRepositoriesProps {}
-
-export const Repositories: FC<IRepositoriesProps> = () => {
+export const Repositories = () => {
   const user = userInfoStore.use.user();
   const repositories = userInfoStore.use.repositories();
 
